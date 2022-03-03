@@ -38,6 +38,8 @@ export const StoreProvider = ({ children }) => {
   const setCheckoutItem = (checkout) => {
     if (isBrowser) {
       localStorage.setItem(localStorageKey, checkout.id)
+    } else {
+      console.log('Error');
     }
 
     setCheckout(checkout)
@@ -72,6 +74,11 @@ export const StoreProvider = ({ children }) => {
 
   const addVariantToCart = (variantId, quantity) => {
     setLoading(true)
+
+    if (checkout.id === "") {
+      console.error("No checkout ID assigned.")
+      return
+    }
 
     const checkoutID = checkout.id
 
