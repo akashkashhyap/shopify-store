@@ -27,8 +27,8 @@ module.exports = {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: "amazingStore",
-        accessToken: process.env.PRISMIC_API_ACCESS_TOKEN,
-        customTypesApiToken: process.env.PRISMIC_CUSTOM_API_TOKEN
+        accessToken: 'MC5ZaURQLWhFQUFDZ0FDRWdI.b--_vU8NAO-_ve-_vWfvv71_JGkda0fvv71_77-977-977-9QO-_vR5K77-977-977-977-9cy8yCg',
+        customTypesApiToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6ImFtYXppbmdzdG9yZS05ZTVkMWY1Yi05MjE4LTRlZjMtOTJlOC03MDEyMTQxYjY5ZDBfNCIsImRhdGUiOjE2NDYzMTc1ODksImRvbWFpbiI6ImFtYXppbmdzdG9yZSIsImlhdCI6MTY0NjMxNzU4OX0.dKumI8vm53ltEUOKh8caZFnJ4L7fUvTGpKPE4t25hHU'
       },
     },
     "gatsby-plugin-image",
