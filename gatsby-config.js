@@ -23,6 +23,14 @@ module.exports = {
         shopifyConnections: ["collections"],
       },
     },
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "amazingStore",
+        accessToken: process.env.PRISMIC_API_ACCESS_TOKEN,
+        customTypesApiToken: process.env.PRISMIC_CUSTOM_API_TOKEN
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

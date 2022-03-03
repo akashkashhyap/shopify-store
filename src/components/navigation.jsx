@@ -15,6 +15,7 @@ export function Navigation({ className }) {
   `)
 
   return (
+    <>
     <nav className={[navStyle, className].join(" ")}>
       <Link
         key="All"
@@ -35,5 +36,6 @@ export function Navigation({ className }) {
         </Link>
       ))}
     </nav>
+    </>
   )
 }

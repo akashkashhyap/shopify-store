@@ -2,6 +2,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import { ProductListing } from "../components/product-listing"
+import SliceZone from "../components/slice-zone"
+
 import {
   container,
   intro,
@@ -17,12 +19,35 @@ export const query = graphql`
         ...ProductCard
       }
     }
+
+    allPrismicHomepage {
+      edges {
+        node {
+          data {
+            body {
+              ... on PrismicHomepageDataBodyHero {
+                id
+                primary {
+                  hero_title {
+                    text
+                  }
+                  hero_image {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `
-function Hero (props) {
+
+function Hero() {
   return (
     <div className={container}>
-      <h1 className={intro}>Welcome to the GatsbyJS + Shopify Demo Store.</h1>
+      <h2 className={intro}>Welcome to the GatsbyJS + Shopify Demo Store.</h2>
       {!!process.env.GATSBY_DEMO_STORE && (
         <>
           <p className={callOut}>
@@ -48,8 +73,10 @@ function Hero (props) {
 }
 
 export default function IndexPage({ data }) {
+  // console.log(data);
   return (
     <Layout>
+      <SliceZone data={data.allPrismicHomepage.edges[0].node.data} />
       <Hero />
       <ProductListing products={data?.shopifyCollection?.products} />
     </Layout>
