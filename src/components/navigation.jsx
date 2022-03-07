@@ -17,8 +17,14 @@ export function Navigation({ className }) {
   return (
     <>
       <nav className={[navStyle, className].join(" ")}>
+        <Link to="/" className={navLink}>
+          Home
+        </Link>
         <Link to="/blogs" className={navLink}>
           Blogs
+        </Link>
+        <Link to="/about" className={navLink}>
+          About
         </Link>
 
         <Link

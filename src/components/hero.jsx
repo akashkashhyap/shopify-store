@@ -24,7 +24,7 @@ const Hero = ({ title, backgroundImage }) => {
   // console.log(title)
   return (
     <HeroWrapper backgroundImage={backgroundImage}>
-      <div>
+      <div className="col-md-12">
         <h1>{title}</h1>
       </div>
     </HeroWrapper>

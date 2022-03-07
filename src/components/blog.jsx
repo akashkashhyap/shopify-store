@@ -28,6 +28,7 @@ const Blog = () => {
   return (
     <div className="row">
       {data.allPrismicBlogs.nodes.map((blog, index) => {
+        console.log(blog);
         return (
           <div className="col-md-4" key={index}>
             <article className="blogCard">

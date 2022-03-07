@@ -6,7 +6,7 @@ const callToActionGrid = ({ callToActions }) => {
   return (
     <>
       {callToActions.map((callToAction, i) => {
-        // console.log("callToAction", callToAction)
+        console.log("callToAction", callToAction)
         return (
           <CallToAction
             key={i}
@@ -14,6 +14,7 @@ const callToActionGrid = ({ callToActions }) => {
             content={callToAction.content.richText}
             featuredImage={callToAction.featured_image.gatsbyImageData}
             actionlink={callToAction.action_link.uid}
+            tag={callToAction.tag}
           />
         )
       })}

@@ -4,12 +4,13 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import { featuredPosts } from "../pages/index.module.css"
 
-const CallToAction = ({ title, content, featuredImage, actionlink }) => {
+const CallToAction = ({ title, content, featuredImage, actionlink, tag }) => {
 //   console.log("actionlink", actionlink)
   return (
     <div className={`col-md-4 ${featuredPosts}`}>
       <Link to={`/blogs/${actionlink}`}>
         <GatsbyImage alt="" image={featuredImage} />
+        <p>{tag}</p>
         <h2>{title}</h2>
         <RichText render={content} />
       </Link>

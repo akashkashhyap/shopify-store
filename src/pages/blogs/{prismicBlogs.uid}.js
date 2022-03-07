@@ -5,9 +5,14 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { RichText } from "prismic-reactjs"
 
 export const query = graphql`
-  query getBlog($slug: String) {
-    prismicBlogs(uid: { eq: $slug }) {
+  query getBlog($id: String) {
+    prismicBlogs(id: { eq: $id }) {
+      uid
+      id
       data {
+        blog_title {
+          text
+        }
         article {
           richText
         }
@@ -15,19 +20,15 @@ export const query = graphql`
         blog_image {
           gatsbyImageData
         }
-        blog_title {
-          text
-        }
       }
-      uid
     }
   }
 `
-const BlogTemplate = ({ data }) => {
-  console.log(data.prismicBlogs)
+const Blog = ({ data }) => {
+  console.log("????", data.prismicBlogs)
   return (
     <Layout>
-      <div className="container">
+      <div className="container 01">
         <article className="singleBlog">
           <h1 className="singleBlog-title">
             {data.prismicBlogs.data.blog_title.text}
@@ -44,5 +45,4 @@ const BlogTemplate = ({ data }) => {
   )
 }
 
-
-export default BlogTemplate
+export default Blog
