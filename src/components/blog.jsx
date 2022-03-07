@@ -29,8 +29,8 @@ const Blog = () => {
     <div className="row">
       {data.allPrismicBlogs.nodes.map((blog, index) => {
         return (
-          <div className="col-md-4">
-            <article className="blogCard" key={index}>
+          <div className="col-md-4" key={index}>
+            <article className="blogCard">
               <GatsbyImage
                 alt=""
                 image={blog.data.blog_image.gatsbyImageData}

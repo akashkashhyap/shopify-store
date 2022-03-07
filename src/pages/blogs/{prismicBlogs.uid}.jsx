@@ -44,4 +44,5 @@ const BlogTemplate = ({ data }) => {
   )
 }
 
+
 export default BlogTemplate

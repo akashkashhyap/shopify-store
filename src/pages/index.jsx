@@ -64,7 +64,7 @@ export const query = graphql`
 `
 
 export default function IndexPage({ data }) {
-  // console.log(data);
+  console.log(data);
   return (
     <Layout>
       <SliceZone data={data.allPrismicHomepage.edges[0].node.data} />
