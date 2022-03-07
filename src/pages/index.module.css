@@ -38,3 +38,8 @@
 .deployButton {
   margin-top: var(--space-lg);
 }
+
+.featuredPosts a{
+  color: #333;
+  text-decoration: none;
+}

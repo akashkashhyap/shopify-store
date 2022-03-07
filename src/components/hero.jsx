@@ -11,17 +11,17 @@ const HeroWrapper = styled.section`
   align-items: center;
   text-align: center;
   color: #fff;
+  margin-bottom:30px;
 
   div {
     max-width: 800px;
-    margin: 0 auto;
-    background: rgba(0, 0, 0, 0.5);
+    margin-left: 5%;
     padding-top: 20px;
   }
 `
 
 const Hero = ({ title, backgroundImage }) => {
-  console.log(title)
+  // console.log(title)
   return (
     <HeroWrapper backgroundImage={backgroundImage}>
       <div>

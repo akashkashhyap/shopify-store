@@ -157,10 +157,10 @@ export default function Product({ data: { product, suggestions } }) {
               <ChevronIcon size={12} />
             </div>
             <h1 className={header}>{title}</h1>
-            <p className={productDescription}>{description}</p>
             <h2 className={priceValue}>
               <span>{price}</span>
             </h2>
+           
             <fieldset className={optionsWrapper}>
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
@@ -207,6 +207,8 @@ export default function Product({ data: { product, suggestions } }) {
                 ))}
               </span>
             </div>
+            
+            <p className={productDescription}>{description}</p>
           </div>
         </div>
       </div>

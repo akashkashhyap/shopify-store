@@ -16,26 +16,31 @@ export function Navigation({ className }) {
 
   return (
     <>
-    <nav className={[navStyle, className].join(" ")}>
-      <Link
-        key="All"
-        className={navLink}
-        to="/products/"
-        activeClassName={activeLink}
-      >
-        All products
-      </Link>
-      {productTypes.map((name) => (
+      <nav className={[navStyle, className].join(" ")}>
+        <Link to="/blogs" className={navLink}>
+          Blogs
+        </Link>
+
         <Link
-          key={name}
+          key="All"
           className={navLink}
-          to={`/products/${slugify(name)}`}
+          to="/products/"
           activeClassName={activeLink}
         >
-          {name}
+          Shop
         </Link>
-      ))}
-    </nav>
+
+        {productTypes.map((name) => (
+          <Link
+            key={name}
+            className={navLink}
+            to={`/products/${slugify(name)}`}
+            activeClassName={activeLink}
+          >
+            {name}
+          </Link>
+        ))}
+      </nav>
     </>
   )
 }

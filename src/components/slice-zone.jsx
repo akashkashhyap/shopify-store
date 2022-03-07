@@ -1,19 +1,31 @@
 import React from "react"
+import CallToActionGrid from "./callToActionGrid"
 import Hero from "./hero"
-// import { container } from "../pages/index.module.css"
 
 const SliceZone = ({ data }) => {
-  console.log("data", data.body)
+  // console.log("data", data.body)
   return (
-    <div className='container'>
+    <div className="container">
       {data.body.map((content, index) => {
-        return (
-          <Hero
-            key={index}
-            title={content.primary.hero_title.text}
-            backgroundImage={content.primary.hero_image.url}
-          />
-        )
+        if (content.slice_type === "hero") {
+          return (
+            <Hero
+              key={index}
+              title={content.primary.hero_title.text}
+              backgroundImage={content.primary.hero_image.url}
+            />
+          )
+        } else if (content.slice_type === "call_to_action") {
+          return (
+            <div className="row" key={index}>
+              <CallToActionGrid
+                callToActions={content.items}
+              />
+            </div>
+          )
+        } else {
+          return null
+        }
       })}
     </div>
   )
