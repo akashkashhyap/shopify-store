@@ -25,7 +25,7 @@ export const query = graphql`
   }
 `
 const Blog = ({ data }) => {
-  console.log("????", data.prismicBlogs)
+  // console.log("????", data.prismicBlogs)
   return (
     <Layout>
       <div className="container 01">

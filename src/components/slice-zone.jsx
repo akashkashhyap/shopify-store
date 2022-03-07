@@ -3,7 +3,7 @@ import CallToActionGrid from "./callToActionGrid"
 import Hero from "./hero"
 import { RichText } from "prismic-reactjs"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { aboutAuthor, p0, pl15 } from "../pages/index.module.css"
+import { aboutAuthor, p0, pr0, pl15 } from "../pages/index.module.css"
 
 const SliceZone = ({ data }) => {
   return (
@@ -29,7 +29,7 @@ const SliceZone = ({ data }) => {
               )
             } else if (content.slice_type === "single_testimonial") {
               return (
-                <div className={`col-md-4 ${aboutAuthor} ${p0}`} key={index}>
+                <div className={`col-md-4 ${aboutAuthor} ${pr0}`} key={index}>
                   <div className="col-md-3">
                     <GatsbyImage
                       alt=""
