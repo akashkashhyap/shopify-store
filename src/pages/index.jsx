@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import SliceZone from "../components/slice-zone"
-import { ProductListing } from "../components/product-listing"
+// import { ProductListing } from "../components/product-listing"
 // import {
 //   container,
 //   intro,
@@ -68,7 +68,6 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <SliceZone data={data.allPrismicHomepage.edges[0].node.data} />
-      <ProductListing products={data?.shopifyCollection?.products} />
     </Layout>
   )
 }
