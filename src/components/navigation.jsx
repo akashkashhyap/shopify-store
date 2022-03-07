@@ -17,13 +17,13 @@ export function Navigation({ className }) {
   return (
     <>
       <nav className={[navStyle, className].join(" ")}>
-        <Link to="/" className={navLink}>
+        <Link to="/" className={navLink} activeClassName={activeLink}>
           Home
         </Link>
-        <Link to="/blogs" className={navLink}>
+        <Link to="/blogs" className={navLink} activeClassName={activeLink}>
           Blogs
         </Link>
-        <Link to="/about" className={navLink}>
+        <Link to="/about" className={navLink} activeClassName={activeLink}>
           About
         </Link>
 
