@@ -2,7 +2,7 @@ import queryString from 'query-string'
 import { urqlClient } from '../context/search-provider'
 
 export const ProductsQuery = `
-query ($query: String!, $sortKey: ProductSortKeys, $first: Int, $last: Int, $after: String, $before: String) {
+query ($query: String, $sortKey: ProductSortKeys, $first: Int, $last: Int, $after: String, $before: String) {
   products(
     query: $query
     sortKey: $sortKey
