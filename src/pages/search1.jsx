@@ -328,7 +328,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
   )
 }
 
-export default function Search(props) {
+export default function SearchPageTemplate(props) {
   return (
     <SearchProvider>
       <SearchPage {...props} />
