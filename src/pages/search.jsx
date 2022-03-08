@@ -329,8 +329,11 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
 }
 export default function SearchPageTemplate(props) {
   return (
+    <>
+    test
     <SearchProvider>
       <SearchPage {...props} />
     </SearchProvider>
+    </>
   )
 }
