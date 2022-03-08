@@ -2,11 +2,10 @@ import * as React from "react"
 import { createClient, Provider as UrlqProvider } from "urql"
 
 export const urqlClient = createClient({
-  url: "https://gatsbyheadlessstore.myshopify.com/api/2022-01/graphql.json",
+  url: "https://gatsbyheadlessstore.myshopify.com/admin/api/2022-01/graphql.json",
   fetchOptions: {
     headers: {
-      "X-Shopify-Storefront-Access-Token":
-        "f6d2f9d368e1327fefefe5c97ad611ba",
+      "X-Shopify-Storefront-Access-Token":"f6d2f9d368e1327fefefe5c97ad611ba",
     },
   },
 })
