@@ -328,14 +328,12 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
   )
 }
 
-export default function SearchPageTemplate({serverData}) {
-  console.log('serverData', serverData)
+export default function SearchPageTemplate(props) {
+  // console.log('serverData', serverData)
   return (
-    // <SearchProvider>
-    //   <SearchPage {...props} />
-    // </SearchProvider>
-    <div>
-      <pre>{JSON.stringify(serverData)} </pre>
-    </div>
+    <SearchProvider>
+      <SearchPage {...props} />
+    </SearchProvider>
+    
   )
 }
