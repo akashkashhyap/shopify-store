@@ -332,7 +332,7 @@ export default function SearchPageTemplate({serverData}) {
   // console.log('props', props)
   return (
     <SearchProvider>
-      <pre> {JSON.stringify(serverData)} </pre>
+      <pre>{JSON.stringify(serverData)} </pre>
       {/* <SearchPage {...props} /> */}
     </SearchProvider>
   )
