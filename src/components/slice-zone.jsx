@@ -13,11 +13,13 @@ const SliceZone = ({ data }) => {
           {data.body.map((content, index) => {
             if (content.slice_type === "hero") {
               return (
+               <div className="col-md-12"> 
                 <Hero
                   key={index}
                   title={content.primary.hero_title.text}
                   backgroundImage={content.primary.hero_image.url}
                 />
+                </div>
               )
             } else if (content.slice_type === "call_to_action") {
               return (
