@@ -22,11 +22,28 @@ const Blog = () => {
           }
         }
       }
+      allPrismicBlogpage {
+        nodes {
+          data {
+            blog_title {
+              text
+            }
+          }
+        }
+      }
     }
   `)
 
   return (
     <div className="row">
+      <div className="col-md-12">
+        {data.allPrismicBlogpage.nodes.map((blogpage,index)=> {
+          return (
+            <h1>{blogpage.data.blog_title.text}</h1>
+          )
+        })}
+      </div>
+
       {data.allPrismicBlogs.nodes.map((blog, index) => {
         // console.log(blog);
         return (

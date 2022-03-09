@@ -34,3 +34,9 @@
 .navLink[aria-active="page"]:hover {
   color: var(--primary);
 }
+.logo {
+  height: 88px;
+}
+.logo img{
+  width: 100%;
+}

@@ -1,18 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
-import Logo from "../icons/logo"
 import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
 import { Toast } from "./toast"
-import {
-  header,
-  container,
-  logo as logoCss,
-  searchButton,
-  nav,
-} from "./header.module.css"
+import { header, container, searchButton, nav } from "./header.module.css"
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -26,9 +19,6 @@ export function Header() {
   return (
     <div className={container}>
       <header className={header}>
-        <Link to="/" className={logoCss}>
-          <Logo />
-        </Link>
         <Navigation className={nav} />
         <Link to="/search" className={searchButton}>
           <SearchIcon />
