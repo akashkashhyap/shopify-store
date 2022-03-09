@@ -6,6 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { aboutAuthor, p0, pr0, pl15 } from "../pages/index.module.css"
 
 const SliceZone = ({ data }) => {
+  console.log("slice data", data)
   return (
     <>
       <div className="container">
@@ -13,12 +14,11 @@ const SliceZone = ({ data }) => {
           {data.body.map((content, index) => {
             if (content.slice_type === "hero") {
               return (
-               <div className="col-md-12"> 
-                <Hero
-                  key={index}
-                  title={content.primary.hero_title.text}
-                  backgroundImage={content.primary.hero_image.url}
-                />
+                <div className="col-md-12" key={index}>
+                  <Hero
+                    title={content.primary.hero_title.text}
+                    backgroundImage={content.primary.hero_image.url}
+                  />
                 </div>
               )
             } else if (content.slice_type === "call_to_action") {

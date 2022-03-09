@@ -6,7 +6,7 @@ const callToActionGrid = ({ callToActions }) => {
   return (
     <>
       {callToActions.map((callToAction, i) => {
-        console.log("callToAction", callToAction)
+        // console.log("callToAction", callToAction)
         return (
           <CallToAction
             key={i}
