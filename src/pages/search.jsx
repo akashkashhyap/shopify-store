@@ -329,7 +329,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
 }
 
 export default function SearchPageTemplate({serverData}) {
-  // console.log('props', props)
+  console.log('serverData', serverData)
   return (
     // <SearchProvider>
     //   <SearchPage {...props} />
