@@ -23,17 +23,6 @@ export const query = graphql`
         node {
           data {
             body {
-              ... on PrismicHomepageDataBodySingleTestimonial {
-                slice_type
-                items {
-                  testimonial_image {
-                    gatsbyImageData
-                  }
-                  testimonial_content {
-                    richText
-                  }
-                }
-              }
               ... on PrismicHomepageDataBodyHero {
                 id
                 slice_type
@@ -61,6 +50,17 @@ export const query = graphql`
                     uid
                   }
                   content {
+                    richText
+                  }
+                }
+              }
+              ... on PrismicHomepageDataBodySingleTestimonial {
+                slice_type
+                items {
+                  testimonial_image {
+                    gatsbyImageData
+                  }
+                  testimonial_content {
                     richText
                   }
                 }

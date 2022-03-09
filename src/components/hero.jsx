@@ -25,7 +25,7 @@ const Hero = ({ title, backgroundImage }) => {
   return (
     <HeroWrapper backgroundImage={backgroundImage}>
       <div className="col-md-12">
-        <h1>{title}</h1>
+        <h1>1 - {title}</h1>
       </div>
     </HeroWrapper>
   )
