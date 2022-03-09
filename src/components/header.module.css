@@ -7,7 +7,7 @@
 }
 
 .header {
-  display: grid;
+  display: flex;
   width: 100%;
   padding: var(--size-gap) var(--size-gutter);
   grid-template-columns: var(--size-input) 1fr min-content min-content;

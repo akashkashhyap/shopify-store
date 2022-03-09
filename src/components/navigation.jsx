@@ -1,7 +1,7 @@
 import * as React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 // import slugify from "@sindresorhus/slugify"
-import { navStyle, navLink, activeLink } from "./navigation.module.css"
+import { navStyle, navLink, activeLink,logo } from "./navigation.module.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export function Navigation({ className }) {
@@ -41,23 +41,34 @@ export function Navigation({ className }) {
       render={(data) => {
         console.log("data", data)
         return (
-          <nav className={[navStyle, className].join(" ")}>
-            {data.allPrismicNavigation.nodes[0].data.navigation_links.map(
-              (data) => {
-                return (
-                  <div key={data.link.uid}>
-                    <Link
-                      to={`/${data.link.uid}`}
-                      className={navLink}
-                      activeClassName={activeLink}
-                    >
-                      {data.label}
-                    </Link>
-                  </div>
-                )
-              }
-            )}
-          </nav>
+          <>
+            <Link to="/">
+              <GatsbyImage
+                alt=""
+                image={
+                  data.allPrismicNavigation.nodes[0].data.logo.gatsbyImageData
+                }
+                className={logo}
+              />
+            </Link>
+            <nav className={[navStyle, className].join(" ")}>
+              {data.allPrismicNavigation.nodes[0].data.navigation_links.map(
+                (data) => {
+                  return (
+                    <div key={data.link.uid}>
+                      <Link
+                        to={`/${data.link.uid}`}
+                        className={navLink}
+                        activeClassName={activeLink}
+                      >
+                        {data.label}
+                      </Link>
+                    </div>
+                  )
+                }
+              )}
+            </nav>
+          </>
         )
       }}
     />

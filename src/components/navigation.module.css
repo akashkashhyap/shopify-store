@@ -5,6 +5,7 @@
   overflow-x: auto;
   white-space: nowrap;
   font-weight: var(--medium);
+  margin-left: auto;
 }
 
 .navLink {
@@ -34,9 +35,7 @@
 .navLink[aria-active="page"]:hover {
   color: var(--primary);
 }
-.logo {
-  height: 88px;
-}
+
 .logo img{
-  width: 100%;
+  width: 160px
 }

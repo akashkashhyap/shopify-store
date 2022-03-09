@@ -62,7 +62,7 @@
 
 .herobanner {
   height: calc(100vh - 66px);
-  background-size: cover;
+  background-size: cover!important;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
