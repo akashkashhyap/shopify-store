@@ -74,7 +74,6 @@ function SearchPage({
   },
   location,
 }) {
-  
   // These default values come from the page query string
   const queryParams = getValuesFromQuery(location.search || serverData.query)
 
@@ -328,11 +327,13 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
     </nav>
   )
 }
-export default function SearchPageTemplate(props) {
-  console.log(props)
+
+export default function SearchPageTemplate({serverData}) {
+  // console.log('props', props)
   return (
     <SearchProvider>
-      <SearchPage {...props} />
+      <pre> {JSON.stringify(serverData)} </pre>
+      {/* <SearchPage {...props} /> */}
     </SearchProvider>
   )
 }
