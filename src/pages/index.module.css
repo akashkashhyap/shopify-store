@@ -59,3 +59,19 @@
 .pl15{
   padding-left: 15px;
 }
+
+.herobanner {
+  height: calc(100vh - 66px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-bottom:30px;
+}
+.herobanner div {
+  max-width: 800px;
+  margin-left: 5%;
+  padding-top: 20px;
+}
