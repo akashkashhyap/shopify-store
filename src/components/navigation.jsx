@@ -1,7 +1,7 @@
 import * as React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 // import slugify from "@sindresorhus/slugify"
-import { navStyle, navLink, activeLink, logo } from "./navigation.module.css"
+import { navStyle, navLink, activeLink } from "./navigation.module.css"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export function Navigation({ className }) {
@@ -39,35 +39,24 @@ export function Navigation({ className }) {
     <StaticQuery
       query={`${navigationQuery}`}
       render={(data) => {
+        console.log("data", data)
         return (
           <nav className={[navStyle, className].join(" ")}>
-            {data.allPrismicNavigation.nodes.map(({ data }) => {
-              return (
-                <>
-                  <div className={logo}>
-                    <Link to="/">
-                      <GatsbyImage alt="" image={data.logo.gatsbyImageData} />
+            {data.allPrismicNavigation.nodes[0].data.navigation_links.map(
+              (data) => {
+                return (
+                  <div key={data.link.uid}>
+                    <Link
+                      to={`/${data.link.uid}`}
+                      className={navLink}
+                      activeClassName={activeLink}
+                    >
+                      {data.label}
                     </Link>
                   </div>
-                  <nav className={[navStyle, className].join(" ")}>
-                    {data.navigation_links.map((data) => {
-                      // console.log(data)
-                      return (
-                        <div key={data.link.uid}>
-                          <Link
-                            to={`/${data.link.uid}`}
-                            className={navLink}
-                            activeClassName={activeLink}
-                          >
-                            {data.label}
-                          </Link>
-                        </div>
-                      )
-                    })}
-                  </nav>
-                </>
-              )
-            })}
+                )
+              }
+            )}
           </nav>
         )
       }}

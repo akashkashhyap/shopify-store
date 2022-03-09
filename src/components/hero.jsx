@@ -5,7 +5,7 @@ import {herobanner} from "../pages/index.module.css"
 
 
 const Hero = ({ title, backgroundImage }) => {
-  console.log(backgroundImage)
+  // console.log(backgroundImage)
   return (
       <div className={`col-md-12 ${herobanner}`} style={{background:`url(${backgroundImage})`}}>
         <h1>{title}</h1>

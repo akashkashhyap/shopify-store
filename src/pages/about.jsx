@@ -48,7 +48,7 @@ const ButtonWrapper = styled.div`
   }
 `
 const About = ({ data }) => {
-  console.log(data.prismicAbout)
+  // console.log(data.prismicAbout)
   return (
     <Layout>
       <div className="container">

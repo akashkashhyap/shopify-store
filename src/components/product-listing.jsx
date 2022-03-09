@@ -24,7 +24,7 @@ export function ProductListing({ products = [] }) {
     <>
       <div className="container">
         {data.allPrismicProducts.nodes.map((productpage, index) => {
-          return <h1>{productpage.data.title.text}</h1>
+          return <h1 key={index}>{productpage.data.title.text}</h1>
         })}
       </div>
       <div className={listingContainerStyle}>
