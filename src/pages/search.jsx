@@ -233,7 +233,7 @@ function SearchPage({
                     product={{
                       title: node.title,
                       priceRangeV2: node.priceRangeV2,
-                      slug: `/products/${slugify(node.productType)}/${
+                      slug: `/products/${slugify(node.productType)}${
                         node.handle
                       }`,
                       // The search API and Gatsby data layer have slightly different images available.
@@ -329,7 +329,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
 }
 
 export default function SearchPageTemplate(props) {
-  // console.log('serverData', serverData)
+  console.log('props', props)
   return (
     <SearchProvider>
       <SearchPage {...props} />

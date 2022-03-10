@@ -2,6 +2,8 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
 import SliceZone from "../components/slice-zone"
+import { Seo } from "../components/seo"
+
 // import { ProductListing } from "../components/product-listing"
 // import {
 //   container,
@@ -22,7 +24,24 @@ export const query = graphql`
       edges {
         node {
           data {
+            title {
+              text
+            }
+            description {
+              text
+            }
             body {
+              ... on PrismicHomepageDataBodyImagesSlider {
+                slice_type
+                items {
+                  image {
+                    gatsbyImageData
+                  }
+                  description {
+                    richText
+                  }
+                }
+              }
               ... on PrismicHomepageDataBodyHero {
                 id
                 slice_type
@@ -75,8 +94,21 @@ export const query = graphql`
 
 export default function IndexPage({ data }) {
   // console.log(data);
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Fuelorganics",
+    description: data.allPrismicHomepage.edges[0].node.data.description.text,
+    url: "https://shopifystoremain.gatsbyjs.io/",
+    logo: "",
+  }
   return (
     <Layout>
+      <Seo
+        schemaMarkup={schema}
+        title={data.allPrismicHomepage.edges[0].node.data.title.text}
+        description={ data.allPrismicHomepage.edges[0].node.data.description.text }
+      />
       <SliceZone data={data.allPrismicHomepage.edges[0].node.data} />
     </Layout>
   )

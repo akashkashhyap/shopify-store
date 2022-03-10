@@ -39,7 +39,7 @@ export function Navigation({ className }) {
     <StaticQuery
       query={`${navigationQuery}`}
       render={(data) => {
-        console.log("data", data)
+        // console.log("data", data)
         return (
           <>
             <Link to="/">

@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { aboutAuthor, p0, pr0, pl15 } from "../pages/index.module.css"
 
 const SliceZone = ({ data }) => {
-  console.log('slice data',data);
+  // console.log("slice data", data)
   return (
     <>
       <div className="container">

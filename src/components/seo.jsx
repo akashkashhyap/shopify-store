@@ -9,6 +9,7 @@ export function Seo({
   pathname = "",
   image = "",
   children = null,
+  schemaMarkup
 }) {
   const location = useLocation()
   const {
@@ -53,7 +54,7 @@ export function Seo({
       titleTemplate={`%s | ${siteTitle}`}
     >
       <html lang={hrefLang} />
-      <meta name="description" content={seo.description} />
+      <meta name="description" content={description} />
       <meta name="image" content={seo.image} />
       <meta property="og:title" content={seo.title} />
       <meta property="og:url" content={seo.url} />
@@ -90,6 +91,9 @@ export function Seo({
           content="noindex, nofollow"
         />
       )}
+      {schemaMarkup &&
+        <script type="application/ld+json">{JSON.stringify(schemaMarkup)}</script>
+      }
       {children}
     </Helmet>
   )
