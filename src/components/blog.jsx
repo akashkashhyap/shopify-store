@@ -39,7 +39,7 @@ const Blog = () => {
       <div className="col-md-12">
         {data.allPrismicBlogpage.nodes.map((blogpage,index)=> {
           return (
-            <h1>{blogpage.data.blog_title.text}</h1>
+            <h1 key={index}>{blogpage.data.blog_title.text}</h1>
           )
         })}
       </div>

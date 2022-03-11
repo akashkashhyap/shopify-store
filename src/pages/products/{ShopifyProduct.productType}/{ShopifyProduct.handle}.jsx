@@ -7,7 +7,7 @@ import { StoreContext } from "../../../context/store-context"
 import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
-import { Seo } from "../../../components/seo"
+
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import {
   productBox,
@@ -28,6 +28,8 @@ import {
   metaSection,
   productDescription,
 } from "./product-page.module.css"
+
+import Seo from "../../../components/seo"
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -102,10 +104,30 @@ export default function Product({ data: { product, suggestions } }) {
   const hasImages = images.length > 0
   const hasMultipleImages = true || images.length > 1
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: title,
+    "url": `https://shopifystoremain.gatsbyjs.io/${product.handle}`,
+    "@id": "",
+    description: description,
+    "offers": [
+      Object.keys(product.variants).map((key)=>{
+          return {
+            "@type" : "Offer",
+            "sku": `${product.variants[key].sku}`,
+            "availability" : `http://schema.org/${product.variants[key].inventoryQuantity ? 'InStock' : 'OutofStock'}`,
+            "price":`${product.variants[key].price}`
+          }
+        })
+    ]
+  }
+
   return (
     <Layout>
       {firstImage ? (
         <Seo
+          schemaMarkup={schema}
           title={title}
           description={description}
           image={getSrc(firstImage.gatsbyImageData)}
@@ -219,6 +241,8 @@ export default function Product({ data: { product, suggestions } }) {
 export const query = graphql`
   query($id: String!, $productType: String!) {
     product: shopifyProduct(id: { eq: $id }) {
+      id
+      handle
       title
       description
       productType
@@ -243,6 +267,8 @@ export const query = graphql`
         gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
       }
       variants {
+        sku
+        inventoryQuantity
         availableForSale
         storefrontId
         title

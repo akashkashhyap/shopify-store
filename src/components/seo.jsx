@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
 
-export function Seo({
+const Seo = ({
   title = "",
   description = "",
   pathname = "",
   image = "",
   children = null,
   schemaMarkup
-}) {
+}) => {
   const location = useLocation()
   const {
     site: { siteMetadata },
@@ -40,7 +40,7 @@ export function Seo({
     twitter,
   } = siteMetadata
 
-  const seo = {
+  const seo1 = {
     title: title || siteTitleDefault,
     description: description || siteDescription,
     url: pathname ? `${siteUrl}${pathname}` : location.href,
@@ -55,17 +55,17 @@ export function Seo({
     >
       <html lang={hrefLang} />
       <meta name="description" content={description} />
-      <meta name="image" content={seo.image} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
+      <meta name="image" content={seo1.image} />
+      <meta property="og:title" content={seo1.title} />
+      <meta property="og:url" content={seo1.url} />
+      <meta property="og:description" content={seo1.description} />
+      <meta property="og:image" content={seo1.image} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:title" content={seo1.title} />
+      <meta name="twitter:url" content={seo1.url} />
+      <meta name="twitter:description" content={seo1.description} />
+      <meta name="twitter:image" content={seo1.image} />
       <meta name="twitter:creator" content={twitter} />
       <link
         rel="icon"
@@ -98,3 +98,5 @@ export function Seo({
     </Helmet>
   )
 }
+
+export default Seo;
